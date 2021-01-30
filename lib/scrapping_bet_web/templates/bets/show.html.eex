@@ -1,0 +1,53 @@
+<h1>Show Bets</h1>
+
+<ul>
+
+  <li>
+    <strong>Sports:</strong>
+    <%= @bets.sports %>
+  </li>
+
+  <li>
+    <strong>Match title:</strong>
+    <%= @bets.match_title %>
+  </li>
+
+  <li>
+    <strong>League:</strong>
+    <%= @bets.league %>
+  </li>
+
+  <li>
+    <strong>Result to bet:</strong>
+    <%= @bets.result_to_bet %>
+  </li>
+
+  <li>
+    <strong>Date game:</strong>
+    <%= @bets.date_game %>
+  </li>
+
+  <li>
+    <strong>Time game:</strong>
+    <%= @bets.time_game %>
+  </li>
+
+  <li>
+    <strong>Best bookie:</strong>
+    <%= @bets.best_bookie %>
+  </li>
+
+  <li>
+    <strong>Best odds:</strong>
+    <%= @bets.best_odds %>
+  </li>
+
+  <li>
+    <strong>Mean median:</strong>
+    <%= @bets.mean_median %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.bets_path(@conn, :edit, @bets) %></span>
+<span><%= link "Back", to: Routes.bets_path(@conn, :index) %></span>

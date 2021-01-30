@@ -14,7 +14,9 @@ defmodule ScrappingBet.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: ScrappingBet.PubSub},
       # Start the Endpoint (http/https)
-      ScrappingBetWeb.Endpoint
+      ScrappingBetWeb.Endpoint,
+
+      ScrappingBet.Scheduler
       # Start a worker by calling: ScrappingBet.Worker.start_link(arg)
       # {ScrappingBet.Worker, arg}
     ]

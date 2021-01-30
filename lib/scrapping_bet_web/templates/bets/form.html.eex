@@ -1,0 +1,47 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :sports %>
+  <%= text_input f, :sports %>
+  <%= error_tag f, :sports %>
+
+  <%= label f, :match_title %>
+  <%= text_input f, :match_title %>
+  <%= error_tag f, :match_title %>
+
+  <%= label f, :league %>
+  <%= text_input f, :league %>
+  <%= error_tag f, :league %>
+
+  <%= label f, :result_to_bet %>
+  <%= text_input f, :result_to_bet %>
+  <%= error_tag f, :result_to_bet %>
+
+  <%= label f, :date_game %>
+  <%= datetime_select f, :date_game %>
+  <%= error_tag f, :date_game %>
+
+  <%= label f, :time_game %>
+  <%= time_select f, :time_game %>
+  <%= error_tag f, :time_game %>
+
+  <%= label f, :best_bookie %>
+  <%= text_input f, :best_bookie %>
+  <%= error_tag f, :best_bookie %>
+
+  <%= label f, :best_odds %>
+  <%= number_input f, :best_odds, step: "any" %>
+  <%= error_tag f, :best_odds %>
+
+  <%= label f, :mean_median %>
+  <%= text_input f, :mean_median %>
+  <%= error_tag f, :mean_median %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

@@ -16,7 +16,8 @@ defmodule ScrappingBetWeb.Router do
   scope "/", ScrappingBetWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    # get "/", PageController, :index
+    resources "/", BetsController
   end
 
   # Other scopes may use custom stacks.

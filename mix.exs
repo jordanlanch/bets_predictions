@@ -45,7 +45,9 @@ defmodule ScrappingBet.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:crawly, "~> 0.1"}
+      {:httpoison, "~> 1.4"},
+      {:floki, "~> 0.20.0"},
+      {:quantum, "~> 3.0"}
     ]
   end
 
