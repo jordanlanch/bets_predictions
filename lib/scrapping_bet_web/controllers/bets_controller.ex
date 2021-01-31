@@ -6,6 +6,7 @@ defmodule ScrappingBetWeb.BetsController do
 
   def index(conn, _params) do
     results = Predictions.list_results()
+    
     render(conn, "index.html", results: results)
   end
 

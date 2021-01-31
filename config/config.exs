@@ -31,6 +31,9 @@ config :scrapping_bet, ScrappingBet.Scheduler,
     {"* * * * *", {ScrappingBet.Scrapper.Scrapper, :get_smoothies_url, []}},
   ]
 
+config :scrapping_bet, ScrappingBetWeb.Endpoint,
+  live_view: [signing_salt: "oP4z5yzg1UBo5xaB+euFF7tQ4n9GvpR2"]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

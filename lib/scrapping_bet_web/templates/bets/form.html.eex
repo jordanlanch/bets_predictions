@@ -41,6 +41,18 @@
   <%= text_input f, :mean_median %>
   <%= error_tag f, :mean_median %>
 
+  <%= label f, :is_finish %>
+  <%= text_input f, :is_finish %>
+  <%= error_tag f, :is_finish %>
+
+  <%= label f, :final_result %>
+  <%= text_input f, :final_result %>
+  <%= error_tag f, :final_result %>
+
+  <%= label f, :is_work %>
+  <%= text_input f, :is_work %>
+  <%= error_tag f, :is_work %>
+
   <div>
     <%= submit "Save" %>
   </div>

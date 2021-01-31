@@ -39,7 +39,7 @@ defmodule ScrappingBet.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_dashboard, "~> 0.2.0"},
+      {:phoenix_live_dashboard, "~> 0.4.0", override: true},
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
@@ -47,7 +47,8 @@ defmodule ScrappingBet.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:httpoison, "~> 1.4"},
       {:floki, "~> 0.20.0"},
-      {:quantum, "~> 3.0"}
+      {:quantum, "~> 3.0"},
+      {:phoenix_live_view, "~> 0.15.4"}
     ]
   end
 

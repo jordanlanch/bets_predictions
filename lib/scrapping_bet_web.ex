@@ -23,6 +23,7 @@ defmodule ScrappingBetWeb do
 
       import Plug.Conn
       import ScrappingBetWeb.Gettext
+      import Phoenix.LiveView.Controller
       alias ScrappingBetWeb.Router.Helpers, as: Routes
     end
   end
@@ -33,6 +34,7 @@ defmodule ScrappingBetWeb do
         root: "lib/scrapping_bet_web/templates",
         namespace: ScrappingBetWeb
 
+      import Phoenix.LiveView.Helpers
       # Import convenience functions from controllers
       import Phoenix.Controller,
         only: [get_flash: 1, get_flash: 2, view_module: 1, view_template: 1]
@@ -48,6 +50,7 @@ defmodule ScrappingBetWeb do
 
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 

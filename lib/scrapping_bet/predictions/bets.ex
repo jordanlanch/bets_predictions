@@ -12,14 +12,30 @@ defmodule ScrappingBet.Predictions.Bets do
     field :result_to_bet, :string
     field :sports, :string
     field :time_game, :time
+    field :is_finish, :boolean
+    field :final_result, :string, default: nil
+    field :is_work, :boolean
 
     timestamps()
   end
 
+  @attrs [
+    :sports,
+    :match_title,
+    :league,
+    :result_to_bet,
+    :date_game,
+    :time_game,
+    :best_bookie,
+    :best_odds,
+    :mean_median,
+    :is_finish,
+    :is_work
+  ]
   @doc false
   def changeset(bets, attrs) do
     bets
-    |> cast(attrs, [:sports, :match_title, :league, :result_to_bet, :date_game, :time_game, :best_bookie, :best_odds, :mean_median])
-    |> validate_required([:sports, :match_title, :league, :result_to_bet, :date_game, :time_game, :best_bookie, :best_odds, :mean_median])
+    |> cast(attrs, @attrs++[:final_result])
+    |> validate_required(@attrs)
   end
 end

@@ -123,4 +123,19 @@ defmodule ScrappingBet.Predictions do
         {:ok, "has already been taken"}
     end
   end
+
+
+  def get_finished_results do
+    from(b in Bets, where: b.is_finish == true, select: count()
+     )
+    |> Repo.one()
+  end
+
+  def get_worked_results do
+    from(b in Bets, where: b.is_work == true, select: count()
+     )
+    |> Repo.one()
+  end
+
+
 end

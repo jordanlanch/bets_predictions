@@ -8,10 +8,12 @@
       <th>League</th>
       <th>Result to bet</th>
       <th>Date game</th>
-      <th>Time game</th>
       <th>Best bookie</th>
       <th>Best odds</th>
       <th>Mean median</th>
+      <th>Is Finish</th>
+      <th>Final Result</th>
+      <th>is Works</th>
 
       <th></th>
     </tr>
@@ -24,10 +26,12 @@
       <td><%= bets.league %></td>
       <td><%= bets.result_to_bet %></td>
       <td><%= bets.date_game %></td>
-      <td><%= bets.time_game %></td>
       <td><%= bets.best_bookie %></td>
       <td><%= bets.best_odds %></td>
       <td><%= bets.mean_median %></td>
+      <td><%= bets.is_finish %></td>
+      <td><%= bets.final_result %></td>
+      <td><%= bets.is_work %></td>
 
       <td>
         <span><%= link "Show", to: Routes.bets_path(@conn, :show, bets) %></span>
