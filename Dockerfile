@@ -3,8 +3,6 @@ FROM bitwalker/alpine-elixir-phoenix:latest
 # Cache elixir deps
 ADD mix.exs mix.lock ./
 RUN mix local.rebar
-RUN rm -rf deps
-RUN rm -rf _build
 RUN mix do deps.get, deps.compile
 
 # Same with npm deps
