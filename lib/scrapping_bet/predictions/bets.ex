@@ -28,14 +28,12 @@ defmodule ScrappingBet.Predictions.Bets do
     :time_game,
     :best_bookie,
     :best_odds,
-    :mean_median,
-    :is_finish,
-    :is_work
+    :mean_median
   ]
   @doc false
   def changeset(bets, attrs) do
     bets
-    |> cast(attrs, @attrs++[:final_result])
+    |> cast(attrs, @attrs++[:final_result, :is_work, :is_finish])
     |> validate_required(@attrs)
   end
 end
