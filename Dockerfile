@@ -2,7 +2,7 @@ FROM bitwalker/alpine-elixir-phoenix:latest
 
 # Cache elixir deps
 ADD mix.exs mix.lock ./
-RUN mix do deps.clean, deps.get, deps.compile
+RUN mix do deps.clean --all, deps.get, deps.compile
 
 # Same with npm deps
 ADD assets/package.json assets/
