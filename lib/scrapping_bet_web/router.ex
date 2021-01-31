@@ -19,7 +19,7 @@ defmodule ScrappingBetWeb.Router do
     pipe_through :browser
 
     # get "/", PageController, :index
-    # resources "/", BetsController
+    resources "/bets", BetsController
     live "/", LiveBets
   end
 
