@@ -132,7 +132,7 @@ defmodule ScrappingBet.Predictions do
   end
 
   def get_worked_results do
-    from(b in Bets, where: b.is_work == true, select: count()
+    from(b in Bets, where: b.is_work == true, where: b.is_finish == true,  select: count()
      )
     |> Repo.one()
   end
