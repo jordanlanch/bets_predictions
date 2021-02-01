@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Sports</th>
       <th>Match title</th>
       <th>League</th>
@@ -21,6 +22,7 @@
   <tbody>
 <%= for bets <- @results do %>
     <tr>
+      <td><%= bets.id %></td>
       <td><%= bets.sports %></td>
       <td><%= bets.match_title %></td>
       <td><%= bets.league %></td>
