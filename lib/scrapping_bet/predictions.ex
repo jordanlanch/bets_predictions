@@ -106,21 +106,21 @@ defmodule ScrappingBet.Predictions do
   def exists_bet?(%{league: league, match_title: match_title, result_to_bet: result_to_bet, date_game: date_game}) do
     from(b in Bets,
      where: b.league == ^league,
-     where: b.result_to_bet == ^result_to_bet,
      where: b.date_game == ^date_game,
      where: b.match_title == ^match_title
      )
-    |> Repo.exists?()
+    |> Repo.one()
   end
 
-  @spec fetch_or_create_bets(map) :: {:ok, Bets.t()}
-  def fetch_or_create_bets(attrs) do
-    with false <- exists_bet?(attrs),
-         {:ok, thing} <- create_bets(attrs) do
-      {:ok, thing}
+  @spec update_or_create_bets(map) :: {:ok, Bets.t()}
+  def update_or_create_bets(attrs) do
+    with nil <- exists_bet?(attrs),
+         {:ok, bets} <- create_bets(attrs) do
+      {:ok, bets}
     else
-      true ->
-        {:ok, "has already been taken"}
+      %Bets{} = bet ->
+        update_bets(bet, attrs)
+        {:ok, bet}
     end
   end
 

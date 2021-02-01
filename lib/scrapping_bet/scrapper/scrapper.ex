@@ -8,7 +8,7 @@ defmodule ScrappingBet.Scrapper.Scrapper do
         urls =
           body
           |> convert_map()
-          |> insert_is_exists()
+          |> update_or_insert()
 
         {:ok, urls}
 
@@ -44,8 +44,8 @@ defmodule ScrappingBet.Scrapper.Scrapper do
     end)
   end
 
-  def insert_is_exists(bets) do
-    Enum.map(bets, fn bet -> Predictions.fetch_or_create_bets(bet) end)
+  def update_or_insert(bets) do
+    Enum.map(bets, fn bet -> Predictions.update_or_create_bets(bet) end)
 
   end
 end

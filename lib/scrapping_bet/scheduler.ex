@@ -3,8 +3,5 @@ defmodule ScrappingBet.Scheduler do
 
   def work do
     result = ScrappingBet.Scrapper.Scrapper.get_smoothies_url()
-
-    IO.inspect(result, label: "XXX")
-
   end
 end
