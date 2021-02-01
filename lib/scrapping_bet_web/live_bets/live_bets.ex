@@ -71,9 +71,11 @@ defmodule ScrappingBetWeb.LiveBets do
     get_worked_results = Predictions.get_worked_results()
     get_finished_results = Predictions.get_finished_results()
 
-    efficacy = 0
-    if get_finished_results == 0 do
-      efficacy =Float.round(((get_worked_results / get_finished_results) * 100), 2)
+    efficacy =
+    if get_finished_results > 0 do
+      Float.round(get_worked_results / get_finished_results * 100, 2)
+    else
+      0
     end
 
     results = Predictions.list_results()
@@ -91,10 +93,12 @@ defmodule ScrappingBetWeb.LiveBets do
     get_worked_results = Predictions.get_worked_results()
     get_finished_results = Predictions.get_finished_results()
 
-    efficacy = 0
-    if get_finished_results == 0 do
-      efficacy =Float.round(((get_worked_results / get_finished_results) * 100), 2)
-    end
+    efficacy =
+      if get_finished_results > 0 do
+        Float.round(get_worked_results / get_finished_results * 100, 2)
+      else
+        0
+      end
 
     results = Predictions.list_results()
 
